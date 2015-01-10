@@ -5,19 +5,7 @@
 #
 
 # Executables to build
-EXEC += fields
 EXEC += pmul
-EXEC += primes
-EXEC += parse
-EXEC += evaluate
-EXEC += polys
-EXEC += d3mult
-EXEC += viewer
-EXEC += shortest_path
-EXEC += test_nodes
-EXEC += mass_spring
-EXEC += graph_tests
-EXEC += tsort
 
 # Get the shell name to determine the OS
 UNAME := $(shell uname)

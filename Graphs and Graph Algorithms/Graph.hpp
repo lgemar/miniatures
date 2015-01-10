@@ -2,8 +2,8 @@
 #include <stack>
 #include <set>
 #include "Point.hpp"
-#include "error.hpp"
-#include "debug.hpp"
+#include "Utility/error.hpp"
+#include "Utility/debug.hpp"
 
 template<typename NodeData, typename EdgeData>
 class Graph {

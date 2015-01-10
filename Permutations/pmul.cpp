@@ -42,6 +42,7 @@ void make_set( SET& e, string a , string b ) {
 }
 
 int main (int argc, char* argv[]) {
+	(void) argc;
 	// Grab command line input
 	string a (argv[1]);
 	string b (argv[2]);
