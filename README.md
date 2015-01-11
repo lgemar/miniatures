@@ -12,29 +12,29 @@ This repository contains three code projects. One involves graphs, another permu
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 -->
 
-#Separation of data structures and algorithms 
+###Separation of data structures and algorithms 
 The Graph.hpp file contains a Graph class that represents a directed or undirected graph. This structure makes use of a proxy design pattern: when a user of the data structure requests a Node or an Edge from the Graph, the user receives a proxy that refers back to a central representation of the graph. This keeps all clients of the graph in sync throughout different pieces of the program. The graph makes extensive use of iterators to allow algorithms to efficiently pass over all nodes, all edges, or all edges adjacent to any particular node.
 
-#Template and generic programming
+###Template and generic programming
 Template meta-programming is used extensively in the creation of iterators that pass over elements of the Graph. The Graph::TransformIter class is templated on a generic iterator and data type and converts the type of the dereferenced iterator into the specified data type. This allow for easy creation of node and edge iterators by templating the transform iterator on the iterator that iterates over the underlying representation and the public type the client expects. 
 
-#Object-oriented design
+###Object-oriented design
 The mass spring physical simulation in mass\_spring.cpp requires definition of several types of stimuli that implement the same interface. An abstract interface for a Stimulus is defined and then each individual force implements this interface. 
 
 ## Permutations
 
-#Functors and closures
+###Functors and closures
 Each permutation is composed of cycles that act as functors; each cycle encloses a one-to-one mapping between elements of a set and returns the permuted element when functionally applied to any element of symbol set. 
 
-#Overloaded operators
+###Overloaded operators
 A permutation is composed of several cycles, and the Permutation data structure in Permutation.hpp makes use of overloaded operators to enable an algorithm to perform algebra over permutations.
 
 ## Symbolic Algebra and Finite Fields
 
-#Recursive Programming
+###Recursive Programming
 The ExpressionTree header constructs an algebraic expression tree from a mathematical expression by following algebraic order of operations. Once algebraic operators are defined, the ExpressionTree performs recursive simplification. 
 
-#Robust testing
+###Robust testing
 The use of tests is demonstrated in Field.hpp. The Field.hpp file provides the FiniteField data structure that mathematically proves whether a symbol set and the operators of addition and multiplication over that symbol set compose a finite field by checking all the axioms for a finite field. The ExpressionTree and FiniteField data structures work together in evaluate.cpp to perform symbolic algebra over finite fields. 
 
 
