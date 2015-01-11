@@ -12,27 +12,27 @@ This repository contains three code projects. One involves graphs, another permu
 A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 -->
 
+####Object-oriented design
+The mass spring physical simulation in mass\_spring.cpp requires definition stimuli that implement the same interface. An abstract interface for a Stimulus is defined and then each force implements this interface. 
+
 ####Separation of data structures and algorithms 
 The Graph.hpp file contains a Graph class that represents a directed or undirected graph. This structure makes use of a proxy design pattern: when a user of the data structure requests a Node or an Edge from the Graph, the user receives a proxy that refers back to a central representation of the graph. This keeps all clients of the graph in sync throughout different pieces of the program. The graph makes extensive use of iterators to allow algorithms to efficiently pass over all nodes, all edges, or all edges adjacent to any particular node.
 
 ####Template and generic programming
-Template meta-programming is used extensively in the creation of iterators that pass over elements of the Graph. The Graph::TransformIter class is templated on a generic iterator and data type and converts the type of the dereferenced iterator into the specified data type. This allow for easy creation of node and edge iterators by templating the transform iterator on the iterator that iterates over the underlying representation and the public type the client expects. 
-
-####Object-oriented design
-The mass spring physical simulation in mass\_spring.cpp requires definition of several types of stimuli that implement the same interface. An abstract interface for a Stimulus is defined and then each individual force implements this interface. 
+Template programming is used to create iterators that pass over the nodes and edges of the Graph. The Graph::TransformIter takes two template parameters: an iterator type and a data type. The transform iterator converts the type of a dereferenced iterator into the specified data type. Creating node and edge iterators involves templating the transform iterator on the underlying container and the types of a Node or Edge.
 
 ## Permutations
 
 ####Functors and closures
-Each permutation is composed of cycles that act as functors; each cycle encloses a one-to-one mapping between elements of a set and returns the permuted element when functionally applied to any element of symbol set. 
+Each permutation is composed of cycles that act as functors; each cycle encloses a one-to-one mapping between elements of a set and returns the permuted element when functionally applied to any element of symbol set. The definition of a Cycle is found in Permutation.hpp. 
 
 ####Overloaded operators
-A permutation is composed of several cycles, and the Permutation data structure in Permutation.hpp makes use of overloaded operators to enable an algorithm to perform algebra over permutations.
+The Permutation class in Permutation.hpp makes use of overloaded multiplication and exponentiation operators to enable algebraic operations over permutations. 
 
 ## Symbolic Algebra and Finite Fields
 
 ####Recursive Programming
-The ExpressionTree header constructs an algebraic expression tree from a mathematical expression by following algebraic order of operations. Once algebraic operators are defined, the ExpressionTree performs recursive simplification. 
+The ExpressionTree header constructs an algebraic expression tree from a mathematical expression by following algebraic order of operations. Each expression contains subexpressions that may also contain subexpressions themselves. Once algebraic operators are defined, the ExpressionTree performs recursive simplification. 
 
 ####Robust testing
 The use of tests is demonstrated in Field.hpp. The Field.hpp file provides the FiniteField data structure that mathematically proves whether a symbol set and the operators of addition and multiplication over that symbol set compose a finite field by checking all the axioms for a finite field. The ExpressionTree and FiniteField data structures work together in evaluate.cpp to perform symbolic algebra over finite fields. 
