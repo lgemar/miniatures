@@ -13,7 +13,7 @@ A short description of the motivation behind the creation and maintenance of the
 -->
 
 ####Object-oriented design
-The mass spring physical simulation in mass\_spring.cpp requires definition stimuli that implement the same interface. An abstract interface for a Stimulus is defined and then each force implements this interface. 
+The mass spring physical simulation in mass\_spring.cpp involves stimuli that superimpose to produce a net force on nodes the graph. The Stimulus class defines an interface that all stimuli inherit and follow.
 
 ####Separation of data structures and algorithms 
 The Graph.hpp file contains a Graph class that represents a directed or undirected graph. This structure makes use of a proxy design pattern: when a user of the data structure requests a Node or an Edge from the Graph, the user receives a proxy that refers back to a central representation of the graph. This keeps all clients of the graph in sync throughout different pieces of the program. The graph makes extensive use of iterators to allow algorithms to efficiently pass over all nodes, all edges, or all edges adjacent to any particular node.
