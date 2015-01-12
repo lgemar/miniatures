@@ -23,7 +23,7 @@ Template programming is used to create iterators that pass over the nodes and ed
 
 ## Permutations
 
-####Functors and closures
+####Functors
 Each permutation is composed of cycles that act as functors; each cycle encloses a one-to-one mapping between elements of a set and returns the permuted element when functionally applied to any element of symbol set. The definition of a Cycle is found in Permutation.hpp. 
 
 ####Overloaded operators
